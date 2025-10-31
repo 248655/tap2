@@ -19,6 +19,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        // 新增：支持自定义构建配置字段
+        buildConfigField("String", "APP_NAME", "\"tap2\"")
     }
 
     buildTypes {
@@ -28,14 +30,18 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // 新增：发布版签名配置（需提前准备签名文件）
+            signingConfig = signingConfigs.getByName("debug") // 实际发布需替换为正式签名
         }
     }
+
+    // 确保 Java 版本匹配
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -101,4 +107,5 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation(libs.room.paging)
+    implementation(libs.androidx.core.splashscreen)
 }
