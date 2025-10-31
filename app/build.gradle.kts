@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId = "com.app.tap2"
-        minSdk = 24
-        targetSdk = 24
+        minSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -20,10 +20,7 @@ android {
             useSupportLibrary = true
         }
     }
-packagingOptions {
-    exclude "META-INF/androidx.*.version"
-  }
-}
+
     buildTypes {
         release {
             isMinifyEnabled = false
