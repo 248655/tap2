@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId = "com.app.tap2"
-        minSdk = 33
-        targetSdk = 34
+        minSdk = 24
+        targetSdk = 24
         versionCode = 1
         versionName = "1.0"
 
@@ -31,11 +31,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_7
+        targetCompatibility = JavaVersion.VERSION_1_7
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "1.7"
     }
     buildFeatures {
         compose = true
